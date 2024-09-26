@@ -1,0 +1,76 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+}
+
+.curtains-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.curtain {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #800000;
+    z-index: 10;
+    transition: transform 2s ease-in-out;
+}
+
+.left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.message-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 5;
+}
+
+.message-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .message-container h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.fireworks {
+    width: 100%;
+    height: 200px;
+    background: url('https://img1.picmix.com/output/stamp/normal/2/4/7/5/485742_cbe41.gif') no-repeat center;
+    background-size: contain;
+}
+
+/* Firework animation styles for more realism */
+@keyframes firework-burst {
+    0% { opacity: 0; }
+    20% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+.fireworks {
+    animation: firework-burst 3s infinite ease-in-out;
+}
